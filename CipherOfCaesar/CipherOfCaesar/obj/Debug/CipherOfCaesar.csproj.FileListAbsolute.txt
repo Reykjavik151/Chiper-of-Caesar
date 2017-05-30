@@ -1,0 +1,14 @@
+F:\Practice\CipherOfCaesar\CipherOfCaesar\bin\Debug\CipherOfCaesar.exe.config
+F:\Practice\CipherOfCaesar\CipherOfCaesar\bin\Debug\CipherOfCaesar.exe
+F:\Practice\CipherOfCaesar\CipherOfCaesar\bin\Debug\CipherOfCaesar.pdb
+F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\CipherOfCaesar.csprojResolveAssemblyReference.cache
+F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\MainWindow.g.cs
+F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\App.g.cs
+F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\CipherOfCaesar_MarkupCompile.cache
+F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\CipherOfCaesar_MarkupCompile.lref
+F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\MainWindow.baml
+F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\CipherOfCaesar.g.resources
+F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\CipherOfCaesar.Properties.Resources.resources
+F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\CipherOfCaesar.csproj.GenerateResource.Cache
+F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\CipherOfCaesar.exe
+F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\CipherOfCaesar.pdb
