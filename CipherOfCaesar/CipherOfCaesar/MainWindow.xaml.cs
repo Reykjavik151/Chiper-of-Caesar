@@ -57,13 +57,16 @@ namespace CipherOfCaesar
             foreach (string item in items)
             {
                 cipher.Enter = item;
-                int guess = cipher.Guess();
-                if (guess != 0)
+                List<int> guess = cipher.Guess();
+                if (guess.Count != 0)
                 {
-                    if (Mathes.ContainsKey(guess))
-                        Mathes[guess]++;
-                    else
-                        Mathes[guess] = 1;
+                    foreach (int buff in guess)
+                    {
+                        if (Mathes.ContainsKey(buff))
+                            Mathes[buff]++;
+                        else
+                            Mathes[buff] = 1;
+                    }
 
                     Mathes[0]--;
                 }
@@ -79,6 +82,10 @@ namespace CipherOfCaesar
                 }
             }
             Guess(0);
+        }
+        private void textBlockGuessOnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+             textBoxRotateTo.Text = textBlockGuess.Text.Substring(37);
         }
 
         #endregion
@@ -125,21 +132,24 @@ namespace CipherOfCaesar
         }
 
         /// <summary>
-        /// Функция смены текстового блока в зависимости от угадывания смещения
+        /// Функция смены текстового блока в зависимости от "угадывания смещения"
         /// </summary>
         private void Guess(int ROTN)
         {
             if (ROTN == 0)
             {
-                textBlockGuess.Text = "I think, \nthat the word\nis not \nencrypted";
+                textBlockGuess.Text = "I think, that the word is not encrypted";
+                textBlockGuess.Cursor = Cursors.Arrow;
+                textBlockGuess.IsEnabled = false;
                 return;
             }
 
-            textBlockGuess.Text = "Possible \ndecryption \nwith a rotate\nof " + (26 + ROTN);
+            textBlockGuess.Text = "Possible decryption with a rotate of " + (26 + ROTN);
+            textBlockGuess.Cursor = Cursors.Hand;
+            textBlockGuess.IsEnabled = true;
         }
 
         #endregion
 
-        
     }
 }

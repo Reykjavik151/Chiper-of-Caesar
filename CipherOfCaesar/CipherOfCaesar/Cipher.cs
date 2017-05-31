@@ -139,11 +139,13 @@ namespace CipherOfCaesar
         /// <summary>
         /// Функция, которая определяет, является ли данный текст зашифрованным или нет.
         /// </summary>
-        public int Guess()
+        public List<int> Guess()
         {
+            List<int> result = new List<int>();
+
             // Если введенное слово пустое или существует в словаре - шифра нет
             if (Enter == "" || SearchWord(Enter))
-                return 0;
+                return result;
 
             // Пробуем все смещения, чтобы попробовать привести слово к нормальному виду
             // Каждый раз после преобразования слова мы проверяем его на существование в словаре
@@ -151,12 +153,9 @@ namespace CipherOfCaesar
             for (int i = 1; i < CharacterCounter; i++)
             {
                 if (SearchWord(Rotate(i)))
-                    return i;
+                    result.Add(i);
             }
-
-            // Ни одно из смещенний не подошло
-            // Итог - это слово введено явно не для расшифровки, а просто ошибочным образом
-            return 0;
+            return result;
         }
 
         #endregion

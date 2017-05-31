@@ -38,15 +38,17 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <Button Name="buttonEncrypt"
-                    Margin="20, 10, 20, 10" Height="25" Click="EncryptOnClick"
+                    Margin="20, 10, 20, 10" Height="25" 
                     Background="Brown" Foreground="White" FontFamily="Lucida Console" FontSize="18"
-                    Focusable="False">
+                    Focusable="False"
+                    Cursor="Hand" Click="EncryptOnClick">
                 Encrypt
             </Button>
             <Button Name="buttonDecrypt"
-                    Margin="20, 10, 20, 10" Height="25" Click="DecryptOnClick"
+                    Margin="20, 10, 20, 10" Height="25" 
                     Background="Brown" Foreground="White" FontFamily="Lucida Console" FontSize="18"
-                    Focusable="False">
+                    Focusable="False" 
+                    Cursor="Hand" Click="DecryptOnClick">
                 Decrypt
             </Button>
             <Label Name="labelRotateTo"
@@ -56,21 +58,17 @@
                      Margin="44,0" 
                      FontFamily="Lucida Console" FontSize="18" BorderBrush="Blue"/>
             <TextBlock Name="textBlockGuess"
-                       Margin="10" 
-                       Background="Gainsboro" FontFamily="Lucida Console" FontSize="18">
-                I think,
-                <LineBreak/> 
-                that the word
-                <LineBreak/>
-                is not 
-                <LineBreak/>
-                encrypted
+                       Margin="10, 25, 10, 10" 
+                       Background="Gainsboro" FontFamily="Lucida Console" FontSize="18"
+                       TextWrapping = "Wrap"
+                       MouseLeftButtonDown="textBlockGuessOnMouseLeftButtonDown">
+                I think, that the word is not encrypted
             </TextBlock>
         </StackPanel>
 
         <RichTextBox Name="richTextBoxAnswer" Grid.Row="1" Grid.Column="2" 
                      Margin="10,10,40,10"
-                     FontFamily="Lucida Console" FontSize="18" BorderBrush="Black"
-                     IsEnabled="False"/>
+                     FontFamily="Lucida Console" FontSize="18" BorderBrush="Black" Background="#FFF3F0F0"
+                     IsReadOnly="True"/>
     </Grid>
 </Window>
