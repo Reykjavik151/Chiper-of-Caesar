@@ -33,17 +33,20 @@
 
         <RichTextBox Name="richTextBoxEnter" Grid.Row="1" 
                      Margin="40,10,10,10"
-                     FontFamily="Lucida Console" FontSize="18" BorderBrush="Black"/>
+                     FontFamily="Lucida Console" FontSize="18" BorderBrush="Black"
+                     TextChanged="richTextBoxEnterOnTextChanged"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <Button Name="buttonEncrypt"
                     Margin="20, 10, 20, 10" Height="25" Click="EncryptOnClick"
-                    Background="Brown" Foreground="White" FontFamily="Lucida Console" FontSize="18">
+                    Background="Brown" Foreground="White" FontFamily="Lucida Console" FontSize="18"
+                    Focusable="False">
                 Encrypt
             </Button>
             <Button Name="buttonDecrypt"
                     Margin="20, 10, 20, 10" Height="25" Click="DecryptOnClick"
-                    Background="Brown" Foreground="White" FontFamily="Lucida Console" FontSize="18">
+                    Background="Brown" Foreground="White" FontFamily="Lucida Console" FontSize="18"
+                    Focusable="False">
                 Decrypt
             </Button>
             <Label Name="labelRotateTo"
@@ -52,6 +55,17 @@
             <TextBox Name="textBoxRotateTo"
                      Margin="44,0" 
                      FontFamily="Lucida Console" FontSize="18" BorderBrush="Blue"/>
+            <TextBlock Name="textBlockGuess"
+                       Margin="10" 
+                       Background="Gainsboro" FontFamily="Lucida Console" FontSize="18">
+                I think,
+                <LineBreak/> 
+                that the word
+                <LineBreak/>
+                is not 
+                <LineBreak/>
+                encrypted
+            </TextBlock>
         </StackPanel>
 
         <RichTextBox Name="richTextBoxAnswer" Grid.Row="1" Grid.Column="2" 
