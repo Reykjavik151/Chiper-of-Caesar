@@ -122,6 +122,14 @@ namespace CipherOfCaesar
         }
 
         /// <summary>
+        /// Обнуление подсчета частоты слов во входной строке.
+        /// </summary>
+        public void NullFrequency()
+        {
+            Frequency = new SortedDictionary<char, int>();
+        }
+
+        /// <summary>
         /// Заполнение дерева множеством английских слов.
         /// </summary>
         private void FillTree()

@@ -29,6 +29,7 @@ namespace CipherOfCaesar
         {
             InitializeComponent();
             cipher = new Cipher(26);
+            chart.DataContext = cipher.Frequency;
         }
 
         #region Events
@@ -43,6 +44,8 @@ namespace CipherOfCaesar
         }
         private void richTextBoxEnterOnTextChanged(object sender, TextChangedEventArgs e)
         {
+            cipher.NullFrequency();
+
             string[] items = (new TextRange(richTextBoxEnter.Document.ContentStart,
                                             richTextBoxEnter.Document.ContentEnd).Text).ToLower().Split(' ');
 
@@ -57,6 +60,8 @@ namespace CipherOfCaesar
             foreach (string item in items)
             {
                 cipher.Enter = item;
+                cipher.CalculateFrequency();
+                ChartChange();
                 List<int> guess = cipher.Guess();
                 if (guess.Count != 0)
                 {
@@ -149,7 +154,20 @@ namespace CipherOfCaesar
             textBlockGuess.IsEnabled = true;
         }
 
+        private void ChartChange()
+        {
+            List<KeyValuePair<string, int>> valueList = new List<KeyValuePair<string, int>>();
+
+            foreach (KeyValuePair<char, int> buff in cipher.Frequency)
+            {
+                valueList.Add(new KeyValuePair<string, int>(buff.Key.ToString(), buff.Value));
+            }
+
+            columnSeries.ItemsSource = valueList;
+        }
+
         #endregion
+
 
     }
 }

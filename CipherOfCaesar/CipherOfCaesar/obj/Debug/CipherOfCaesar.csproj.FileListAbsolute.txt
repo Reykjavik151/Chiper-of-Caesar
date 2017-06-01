@@ -12,3 +12,7 @@ F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\CipherOfCaesar.Properties.Re
 F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\CipherOfCaesar.csproj.GenerateResource.Cache
 F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\CipherOfCaesar.exe
 F:\Practice\CipherOfCaesar\CipherOfCaesar\obj\Debug\CipherOfCaesar.pdb
+F:\Practice\CipherOfCaesar\CipherOfCaesar\bin\Debug\system.windows.controls.datavisualization.toolkit.dll
+F:\Practice\CipherOfCaesar\CipherOfCaesar\bin\Debug\WPFToolkit.dll
+F:\Practice\CipherOfCaesar\CipherOfCaesar\bin\Debug\system.windows.controls.datavisualization.toolkit.pdb
+F:\Practice\CipherOfCaesar\CipherOfCaesar\bin\Debug\WPFToolkit.pdb
