@@ -22,8 +22,15 @@
         <!-- Grid.Row 1 -->
 
         <TextBlock Margin="10" TextAlignment="Center" 
-			Background="Gainsboro" FontSize="18" FontFamily="Lucida Console"
-			Grid.ColumnSpan="3"><Run Foreground="Blue" Text="Cipher of Caesar"/><LineBreak/><Run Text="  Enter the required text for"/><Run Text=" "/><Run Foreground="Brown" Text="encryption"/><Run Text=" "/><Run Text="or"/><Run Text=" "/><Run Foreground="Brown" Text="decryption"/><Run Text=" "/><Run Text="and press the appropriate key"/></TextBlock>
+			       Background="Gainsboro" FontSize="18" FontFamily="Lucida Console"
+			       Grid.ColumnSpan="3">
+            <Run Foreground="Blue" Text="Cipher of Caesar"/>
+            <LineBreak/><Run Text="  Enter the required text for"/>
+            <Run Foreground="Brown" Text="encryption"/>
+            <Run Text="or"/>
+            <Run Foreground="Brown" Text="decryption"/>
+            <Run Text="and press the appropriate key"/>
+        </TextBlock>
 
         <!-- Grid.Row 2 -->
 
@@ -61,11 +68,12 @@
 			FontFamily="Lucida Console" FontSize="18" BorderBrush="Black" Background="#FFF3F0F0"
 			IsReadOnly="True"/>
 
+        <!-- Grid.Row 3 -->
 
-        <chartingToolkit:Chart Name="chart" Title="Frequency" 
+        <chartingToolkit:Chart Name="chart" Title="Frequency of letters in the entering text" 
                                Grid.Row="2" Grid.ColumnSpan="3" Margin="40,10" FontFamily="Lucida Console" FontSize="18">
                             
-                <chartingToolkit:ColumnSeries Name="columnSeries" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}"/>
+                <chartingToolkit:ColumnSeries Name="columnSeries" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" Title="Frequency"/>
             
         </chartingToolkit:Chart>
 
