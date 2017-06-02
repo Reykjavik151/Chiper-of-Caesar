@@ -37,7 +37,13 @@
         <RichTextBox x:Name="richTextBoxEnter" Grid.Row="1" 
 			           Margin="40,10,10,10"
 			           FontFamily="Lucida Console" FontSize="18" BorderBrush="Black"
-			           TextChanged="richTextBoxEnterOnTextChanged"/>
+			           TextChanged="richTextBoxEnterOnTextChanged">
+            <RichTextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Remove" Click="MenuItemRemoveOnClick"/>
+                </ContextMenu>
+            </RichTextBox.ContextMenu>
+        </RichTextBox>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <Button x:Name="buttonEncrypt"
@@ -71,9 +77,10 @@
         <!-- Grid.Row 3 -->
 
         <chartingToolkit:Chart Name="chart" Title="Frequency of letters in the entering text" 
-                               Grid.Row="2" Grid.ColumnSpan="3" Margin="40,10" FontFamily="Lucida Console" FontSize="18">
+                               Grid.Row="2" Grid.ColumnSpan="3" Margin="40,10" 
+                               FontFamily="Lucida Console" FontSize="18">
                             
-                <chartingToolkit:ColumnSeries Name="columnSeries" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" Title="Frequency"/>
+                <chartingToolkit:ColumnSeries BorderBrush="Blue" Name="columnSeries" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" Title="Frequency"/>
             
         </chartingToolkit:Chart>
 

@@ -96,13 +96,19 @@ namespace CipherOfCaesar
         {
              textBoxRotateTo.Text = textBlockGuess.Text.Substring(37);
         }
+        private void MenuItemRemoveOnClick(object sender, RoutedEventArgs e)
+        {
+            FlowDocument document = new FlowDocument();
+            document.Blocks.Add(new Paragraph(new Bold(new Run(""))));
+            richTextBoxEnter.Document = document;
+        }
 
         #endregion
 
         #region Methods
 
         /// <summary>
-        /// Переходная функция к вычислению смещенной строки
+        /// Переходная функция к вычислению смещенной строки.
         /// </summary>
         private void Bridge(bool encrypt)
         {
@@ -128,7 +134,7 @@ namespace CipherOfCaesar
         }
 
         /// <summary>
-        /// Функция смещения строки
+        /// Функция смещения строки.
         /// </summary>
         private void Work(int ROTN)
         {
@@ -141,7 +147,7 @@ namespace CipherOfCaesar
         }
 
         /// <summary>
-        /// Функция смены текстового блока в зависимости от "угадывания смещения"
+        /// Функция смены текстового блока в зависимости от "угадывания смещения".
         /// </summary>
         private void Guess(int ROTN)
         {
@@ -158,21 +164,15 @@ namespace CipherOfCaesar
             textBlockGuess.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Функция перерисовки гистограммы.
+        /// </summary>
         private void ChartChange()
         {
-            List<KeyValuePair<string, int>> valueList = new List<KeyValuePair<string, int>>();
-
-            foreach (KeyValuePair<char, int> buff in cipher.Frequency)
-            {
-                valueList.Add(new KeyValuePair<string, int>(buff.Key.ToString(), buff.Value));
-            }
-
             columnSeries.ItemsSource = cipher.Frequency;
-            //columnSeries.ItemsSource;
         }
 
         #endregion
-
 
     }
 }
