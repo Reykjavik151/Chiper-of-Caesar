@@ -35,9 +35,9 @@
         <!-- Grid.Row 2 -->
 
         <RichTextBox x:Name="richTextBoxEnter" Grid.Row="1" 
-			Margin="40,10,10,10"
-			FontFamily="Lucida Console" FontSize="18" BorderBrush="Black"
-			TextChanged="richTextBoxEnterOnTextChanged"/>
+			           Margin="40,10,10,10"
+			           FontFamily="Lucida Console" FontSize="18" BorderBrush="Black"
+			           TextChanged="richTextBoxEnterOnTextChanged"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <Button x:Name="buttonEncrypt"

@@ -49,8 +49,12 @@ namespace CipherOfCaesar
             string[] items = (new TextRange(richTextBoxEnter.Document.ContentStart,
                                             richTextBoxEnter.Document.ContentEnd).Text).ToLower().Split(' ');
 
-            for(int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
+            {
                 items[i] = Cleaner.CleanWord(items[i]);
+                if (items.Length > 1)
+                    ;
+            }
 
             if (items.Length == 0)
                 Guess(0);
@@ -61,7 +65,6 @@ namespace CipherOfCaesar
             {
                 cipher.Enter = item;
                 cipher.CalculateFrequency();
-                ChartChange();
                 List<int> guess = cipher.Guess();
                 if (guess.Count != 0)
                 {
@@ -76,6 +79,7 @@ namespace CipherOfCaesar
                     Mathes[0]--;
                 }
             }
+            ChartChange();
 
             int value = Mathes.Max(n => n.Value);
             foreach(KeyValuePair<int, int> buff in Mathes)
@@ -163,7 +167,8 @@ namespace CipherOfCaesar
                 valueList.Add(new KeyValuePair<string, int>(buff.Key.ToString(), buff.Value));
             }
 
-            columnSeries.ItemsSource = valueList;
+            columnSeries.ItemsSource = cipher.Frequency;
+            //columnSeries.ItemsSource;
         }
 
         #endregion
