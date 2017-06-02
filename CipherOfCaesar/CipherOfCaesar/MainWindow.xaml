@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CipherOfCaesar"
         xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" x:Class="CipherOfCaesar.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="768" Width="1024">
+        Title="Cipher of Caesar" Height="768" Width="1024">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="425*"/>
@@ -37,53 +37,49 @@
         <RichTextBox x:Name="richTextBoxEnter" Grid.Row="1" 
 			           Margin="40,10,10,10"
 			           FontFamily="Lucida Console" FontSize="18" BorderBrush="Black"
-			           TextChanged="richTextBoxEnterOnTextChanged">
-            <RichTextBox.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="Remove" Click="MenuItemRemoveOnClick"/>
-                </ContextMenu>
-            </RichTextBox.ContextMenu>
+			           TextChanged="richTextBoxEnterOnTextChanged"
+                       ScrollViewer.VerticalScrollBarVisibility="Visible">
         </RichTextBox>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <Button x:Name="buttonEncrypt"
-				Margin="20, 10, 20, 10" Height="25" 
-				Background="Brown" Foreground="White" FontFamily="Lucida Console" FontSize="18"
-				Focusable="False"
-				Cursor="Hand" Click="EncryptOnClick" Content="Encrypt"/>
+				      Margin="20, 10, 20, 10" Height="25" 
+				      Background="Brown" Foreground="White" FontFamily="Lucida Console" FontSize="18"
+				      Focusable="False"
+				      Cursor="Hand" Click="EncryptOnClick" Content="Encrypt"/>
             <Button x:Name="buttonDecrypt"
-				Margin="20, 10, 20, 10" Height="25" 
-				Background="Brown" Foreground="White" FontFamily="Lucida Console" FontSize="18"
-				Focusable="False" 
-				Cursor="Hand" Click="DecryptOnClick" Content="Decrypt"/>
+				      Margin="20, 10, 20, 10" Height="25" 
+				      Background="Brown" Foreground="White" FontFamily="Lucida Console" FontSize="18"
+				      Focusable="False" 
+				      Cursor="Hand" Click="DecryptOnClick" Content="Decrypt"/>
             <Label x:Name="labelRotateTo"
-				Content="Rotate to:" Margin="26,0,26,0"
-				FontFamily="Lucida Console" FontSize="18"/>
+				     Content="Rotate to:" Margin="26,0,26,0"
+				     FontFamily="Lucida Console" FontSize="18"/>
             <TextBox x:Name="textBoxRotateTo"
-				Margin="44,0" 
-				FontFamily="Lucida Console" FontSize="18" BorderBrush="Blue"/>
+				       Margin="44,0" 
+				       FontFamily="Lucida Console" FontSize="18" BorderBrush="Blue"/>
             <TextBlock x:Name="textBlockGuess"
-				Margin="10, 25, 10, 10" 
-				Background="Gainsboro" FontFamily="Lucida Console" FontSize="18"
-				TextWrapping = "Wrap" IsEnabled="False"
-				MouseLeftButtonDown="textBlockGuessOnMouseLeftButtonDown"><Run Text="I think, that the word is not encrypted"/></TextBlock>
+				       Margin="10, 25, 10, 10" 
+				       Background="Gainsboro" FontFamily="Lucida Console" FontSize="18"
+				       TextWrapping = "Wrap" IsEnabled="False"
+				       MouseLeftButtonDown="textBlockGuessOnMouseLeftButtonDown"><Run Text="I think, that the word is not encrypted"/></TextBlock>
         </StackPanel>
 
         <RichTextBox x:Name="richTextBoxAnswer" Grid.Row="1" Grid.Column="2" 
-			Margin="10,10,40,10"
-			FontFamily="Lucida Console" FontSize="18" BorderBrush="Black" Background="#FFF3F0F0"
-			IsReadOnly="True"/>
+			           Margin="10,10,40,10"
+			           FontFamily="Lucida Console" FontSize="18" BorderBrush="Black" Background="#FFF3F0F0"
+			           IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
 
         <!-- Grid.Row 3 -->
 
         <chartingToolkit:Chart Name="chart" Title="Frequency of letters in the entering text" 
                                Grid.Row="2" Grid.ColumnSpan="3" Margin="40,10" 
                                FontFamily="Lucida Console" FontSize="18">
-                            
-                <chartingToolkit:ColumnSeries BorderBrush="Blue" Name="columnSeries" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" Title="Frequency"/>
-            
-        </chartingToolkit:Chart>
 
+            <chartingToolkit:ColumnSeries Name="columnSeries" Title="Frequency"
+                                          DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}"/>
+
+        </chartingToolkit:Chart>
 
     </Grid>
 </Window>

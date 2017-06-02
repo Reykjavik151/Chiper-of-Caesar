@@ -96,12 +96,6 @@ namespace CipherOfCaesar
         {
              textBoxRotateTo.Text = textBlockGuess.Text.Substring(37);
         }
-        private void MenuItemRemoveOnClick(object sender, RoutedEventArgs e)
-        {
-            FlowDocument document = new FlowDocument();
-            document.Blocks.Add(new Paragraph(new Bold(new Run(""))));
-            richTextBoxEnter.Document = document;
-        }
 
         #endregion
 
@@ -174,5 +168,15 @@ namespace CipherOfCaesar
 
         #endregion
 
+        private void chartMenuItemRemoveOnClick(object sender, RoutedEventArgs e)
+        {
+            cipher.NullFrequency();
+            chart.DataContext = null;
+        }
+        private void chartMenuItemCalculateOnClick(object sender, RoutedEventArgs e)
+        {
+            cipher.CalculateFrequency();
+            chart.DataContext = cipher.Frequency;
+        }
     }
 }
