@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CipherOfCaesar
 {
-    static class Cleaner
+    static public class Cleaner
     {
         static public string CleanWord(string word)
         {

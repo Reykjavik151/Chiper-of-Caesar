@@ -7,7 +7,7 @@ using System.IO;
 
 namespace CipherOfCaesar
 {
-    class Cipher
+    public class Cipher
     {
 
         #region Fields

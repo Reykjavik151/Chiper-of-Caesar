@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CipherOfCaesar
 {
-    class BinaryTreeOfWords
+    public class BinaryTreeOfWords
     {
 
         #region Fields

@@ -1,0 +1,12 @@
+F:\Practice\CipherOfCaesar\CipherOfCaesar.Test\bin\Debug\CipherOfCaesar.Test.dll
+F:\Practice\CipherOfCaesar\CipherOfCaesar.Test\bin\Debug\CipherOfCaesar.Test.pdb
+F:\Practice\CipherOfCaesar\CipherOfCaesar.Test\bin\Debug\CipherOfCaesar.exe
+F:\Practice\CipherOfCaesar\CipherOfCaesar.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+F:\Practice\CipherOfCaesar\CipherOfCaesar.Test\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+F:\Practice\CipherOfCaesar\CipherOfCaesar.Test\bin\Debug\WPFToolkit.dll
+F:\Practice\CipherOfCaesar\CipherOfCaesar.Test\bin\Debug\CipherOfCaesar.pdb
+F:\Practice\CipherOfCaesar\CipherOfCaesar.Test\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+F:\Practice\CipherOfCaesar\CipherOfCaesar.Test\bin\Debug\WPFToolkit.pdb
+F:\Practice\CipherOfCaesar\CipherOfCaesar.Test\obj\Debug\CipherOfCaesar.Test.csprojResolveAssemblyReference.cache
+F:\Practice\CipherOfCaesar\CipherOfCaesar.Test\obj\Debug\CipherOfCaesar.Test.dll
+F:\Practice\CipherOfCaesar\CipherOfCaesar.Test\obj\Debug\CipherOfCaesar.Test.pdb
