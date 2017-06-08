@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace CipherOfCaesar
 {
@@ -14,12 +15,15 @@ namespace CipherOfCaesar
         #region Fields
 
         Cipher cipher;
+        DispatcherTimer timer;
 
         #endregion
 
         public MainWindow()
         {
             InitializeComponent();
+            InitializeTimer();
+
             cipher = new Cipher(26);
             chart.DataContext = cipher.Frequency;
         }
@@ -36,6 +40,7 @@ namespace CipherOfCaesar
         }
         private void richTextBoxEnterOnTextChanged(object sender, TextChangedEventArgs e)
         {
+            timer.IsEnabled = false;
             cipher.NullFrequency();
 
             string[] items = (new TextRange(richTextBoxEnter.Document.ContentStart,
@@ -44,8 +49,6 @@ namespace CipherOfCaesar
             for (int i = 0; i < items.Length; i++)
             {
                 items[i] = Cleaner.CleanWord(items[i]);
-                if (items.Length > 1)
-                    ;
             }
 
             if (items.Length == 0)
@@ -71,7 +74,6 @@ namespace CipherOfCaesar
                     Mathes[0]--;
                 }
             }
-            ChartChange();
 
             int value = Mathes.Max(n => n.Value);
             foreach(KeyValuePair<int, int> buff in Mathes)
@@ -79,14 +81,31 @@ namespace CipherOfCaesar
                 if (buff.Value == value)
                 {
                     Guess(-buff.Key);
+                    timer.IsEnabled = true;
                     return;
                 }
             }
+            timer.IsEnabled = true;
             Guess(0);
         }
         private void textBlockGuessOnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
              textBoxRotateTo.Text = textBlockGuess.Text.Substring(37);
+        }
+        private void chartMenuItemRemoveOnClick(object sender, RoutedEventArgs e)
+        {
+            cipher.NullFrequency();
+            chart.DataContext = null;
+        }
+        private void chartMenuItemCalculateOnClick(object sender, RoutedEventArgs e)
+        {
+            cipher.CalculateFrequency();
+            chart.DataContext = cipher.Frequency;
+        }
+        private void timerTick(object sender, EventArgs e)
+        {
+            ChartChange();
+            timer.IsEnabled = false;
         }
 
         #endregion
@@ -158,17 +177,17 @@ namespace CipherOfCaesar
             columnSeries.ItemsSource = cipher.Frequency;
         }
 
-        #endregion
+        /// <summary>
+        /// Инициализация таймера при старте программы.
+        /// </summary>
+        private void InitializeTimer()
+        {
+            timer = new DispatcherTimer();
+            timer.Tick += timerTick;
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 300);
+        }
 
-        private void chartMenuItemRemoveOnClick(object sender, RoutedEventArgs e)
-        {
-            cipher.NullFrequency();
-            chart.DataContext = null;
-        }
-        private void chartMenuItemCalculateOnClick(object sender, RoutedEventArgs e)
-        {
-            cipher.CalculateFrequency();
-            chart.DataContext = cipher.Frequency;
-        }
+        #endregion
+        
     }
 }
