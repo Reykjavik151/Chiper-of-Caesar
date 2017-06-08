@@ -5,6 +5,7 @@ namespace CipherOfCaesar.Test
     [TestClass]
     public class BinaryTreeOfWordsTest
     {
+
         [TestMethod]
         public void TreeTest()
         {

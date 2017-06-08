@@ -117,10 +117,9 @@ namespace CipherOfCaesar
         /// </summary>
         private void Bridge(bool encrypt)
         {
-            int buff;
             try
             {
-                buff = Convert.ToInt32(textBoxRotateTo.Text);
+                int buff = Convert.ToInt32(textBoxRotateTo.Text);
 
                 if (!encrypt)
                     buff *= -1;

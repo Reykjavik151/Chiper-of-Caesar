@@ -7,6 +7,7 @@ namespace CipherOfCaesar.Test
     [DeploymentItem("glossary.txt")]
     public class CipherTest
     {
+
         [TestMethod]
         public void RotateTest()
         {
@@ -33,11 +34,18 @@ namespace CipherOfCaesar.Test
         public void CalculateFrequencyTest()
         {
             Cipher value = new Cipher(26);
-            value.Frequency.Add('d', 11);
-            value.Frequency.Add('a', 25);
-            Assert.AreEqual(2, value.Frequency.Count);
-            Assert.AreEqual(11, value.Frequency['d']);
-            Assert.AreEqual(25, value.Frequency['a']);
+            value.Enter = "this";
+            value.CalculateFrequency();
+            value.Enter = "is";
+            value.CalculateFrequency();
+            value.Enter = "test";
+            value.CalculateFrequency();
+            Assert.AreEqual(5, value.Frequency.Count);
+            Assert.AreEqual(3, value.Frequency['t']);
+            Assert.AreEqual(1, value.Frequency['h']);
+            Assert.AreEqual(2, value.Frequency['i']);
+            Assert.AreEqual(3, value.Frequency['s']);
+            Assert.AreEqual(1, value.Frequency['e']);
         }
 
         [TestMethod]
