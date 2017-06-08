@@ -33,7 +33,7 @@ namespace CipherOfCaesar
             Enter = null;
             this.CharacterCounter = CharacterCounter;
             Frequency = new SortedDictionary<char, int>();
-            TreeOfWords = new BinaryTreeOfWords("Start");
+            TreeOfWords = new BinaryTreeOfWords("start");
             FillTree();
         }
         public Cipher(int CharacterCounter, string Enter)
@@ -42,7 +42,7 @@ namespace CipherOfCaesar
             this.CharacterCounter = CharacterCounter;
             Frequency = new SortedDictionary<char, int>();
             CalculateFrequency();
-            TreeOfWords = new BinaryTreeOfWords("Start");
+            TreeOfWords = new BinaryTreeOfWords("start");
             FillTree();
         }
 
